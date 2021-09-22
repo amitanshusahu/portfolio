@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amitanshu sahu</title>
+    <link rel="stylesheet" href="homestyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+                <!-- for Explore button-- -->
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                <script>
+                    $(document).ready(function () {
+                        // Add smooth scrolling to all links
+                        $("a").on('click', function (event) {
+    
+                            // Make sure this.hash has a value before overriding default behavior
+                            if (this.hash !== "") {
+                                // Prevent default anchor click behavior
+                                event.preventDefault();
+    
+                                // Store hash
+                                var hash = this.hash;
+    
+                                // Using jQuery's animate() method to add smooth page scroll
+                                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                                $('html, body').animate({
+                                    scrollTop: $(hash).offset().top
+                                }, 1000, function () {
+    
+                                    // Add hash (#) to URL when done scrolling (default click behavior)
+                                    window.location.hash = hash;
+                                });
+                            } // End if
+                        });
+                    });
+                </script>
+</head>
+
+<body>
+    <!-- --header-- -->
+    <header>
+        <div class="profileCardContainer">
+            <div class="profileImage">
+                <img src="img/einstineprofile3.png" alt="Amitanshu sahu">
+            </div>
+            <div class="MyDetails">
+                <div class="details">
+                    <p id="line1">Hi, I'm</p>
+                    <p id="line2">Dr.Amitanshu sahu</p>
+                    <p id="line3">i am a Scientist</p>
+                    <button class="btn_l">Contact Me</button>
+                    <button class="btn_l"><a href="#MainContent">Explore &#8595;</a></button>
+                    <span>Explore who I am, and know more about me</span>
+                </div>
+            </div>
+
+            <script>
+            // let skill=document.getElementById("line3");
+            // var i=1;
+
+            // var j=1;
+            // var k;
+            // clr=setInterval(changeSkill(i), 3000);
+            // function changeSkill(p){
+            //     // skill.style=" animation: fadeout 3s;"
+            //     // skill.innerHTML="I am also have some Enginearing skills"
+            //     showSkill(i+=p)
+            // }
+            </script>
+        </div>
+    </header>
+
+    <!-- --navigation-- -->
+    <nav id="nav">
+        <div class="logoHolder">
+            <img src="img/amitanshu_sahu.png" alt="Amitanshu Sahu">
+        </div>
+        <div class="menu">
+            <a href="">Home</a>
+            <a href="">Works</a>
+            <a href="">About</a>
+            <a href="">Contact</a>
+        </div>
+        <script>
+            // When the user scrolls the page, execute StickIt
+            window.onscroll = function () { StictIt() };
+
+            var navbar = document.getElementById("nav");
+            var sticky = nav.offsetTop;
+            function StictIt() {
+                if (window.pageYOffset >= sticky) {
+                    nav.classList.add("sticky")
+                } else {
+                    nav.classList.remove("sticky");
+                }
+            }
+        </script>
+    </nav>
+
+    <main id="MainContent">
+        <section class="section1">
+            <div class="content">
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe ad vero, porro sed nam eaque, natus
+                consequatur atque illum, voluptatum dolor molestiae odio dolore recusandae? Quae consequatur optio est
+                minus.
+            </p>
+            </div>
+        </section>
+        <section class="section2">
+
+        </section>
+    </main>
+</body>
+
+</html>
