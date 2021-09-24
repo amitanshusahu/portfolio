@@ -41,6 +41,33 @@
 </head>
 
 <body>
+        <!-- Menu Modal -->
+        <div class="MenuModal" id="MenuModal">
+                <a href="">Home</a>
+                <a href="">Works</a>
+                <a href="">About</a>
+                <a href="">Contact</a>
+            <script>
+                    //  for Menu btn in phone , NOT WORKING IN THE EXTERNAL BUT WORKING IN THE INTERNAL
+         var menuClick = 1;
+         menu(menuClick)
+    
+         function openMenu(o){
+             menu(menuClick += o)
+         }
+    
+         function menu(o){
+            if(o%2==0){
+                document.getElementById("MenuModal").style=" height:fit-content;"
+            }
+            else{
+                document.getElementById("MenuModal").style="height : 0px; "
+            }
+         }
+        //  <<---------------------------------------->
+            </script>
+        </div>
+
     <!-- --header-- -->
     <header>
         <div class="profileCardContainer">
@@ -84,6 +111,9 @@
             <a href="">Works</a>
             <a href="">About</a>
             <a href="">Contact</a>
+        </div>
+        <div id="MenuBtn" onclick="openMenu(1)">
+            <img src="img/icons/menuBtn.png" alt="Menu">
         </div>
         <script>
             // When the user scrolls the page, execute StickIt

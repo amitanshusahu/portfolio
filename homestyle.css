@@ -8,8 +8,7 @@ html {
 header{
     height: 100vh;
     width: 100vw;
-    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.158) , rgba(6, 0, 15, 0.877)55%), url(img/header.jpg);
-    background-attachment: fixed;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.192) , rgb(0, 0, 0)), url(img/header.jpg);
     background-size: cover;
     position: relative;
 }
@@ -71,10 +70,10 @@ header{
     white-space: nowrap; */
     /* overflow: hidden; */
     /* border-right: 2px solid white; */
-    animation: fadeout 3s;
+    /* animation: fadeout 3s; */
     /* animation: blink 0.5s linear infinite; */
 }
-@keyframes fadeout {
+/* @keyframes fadeout {
     0%{
         opacity: 1;
     }
@@ -87,7 +86,7 @@ header{
     100%{
         opacity: 0;
     }
-}
+} */
 /* @keyframes blink {
     50%{
         border-right-color: transparent;
@@ -107,6 +106,27 @@ header{
 }
 
 /* navigation */
+#MenuModal{
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    background-color: transparent;
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    overflow: hidden;
+    height:0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 59px;
+}
+#MenuModal a{
+    color: white;
+    font-weight: bolder;
+    padding: 5px;
+    margin: 10px;
+    color: white;
+}
 nav{
     display: flex;
     position: sticky;
@@ -116,7 +136,7 @@ nav{
     -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
     z-index: 10000;
-    float: left;
+    float: left;  /*this will take no extra space in the section */
     width: 100%;
 }
 nav .logoHolder{
@@ -137,6 +157,13 @@ nav .menu a{
     padding: 5px;
     margin: 10px;
     color: white;
+}
+nav #MenuBtn{
+    height: 1.5rem;
+    display: none;
+}
+nav #MenuBtn img{
+    height: 1.5rem;
 }
 .sticky{
     position: fixed;
@@ -193,7 +220,12 @@ section{
     .MyDetails #line3{
         font-size: 20px;
     }
-    nav .MenuBtn{
+    nav .menu{
+        display: none;
+    }
+    nav #MenuBtn{
         display: block;
+        margin: 10px;
+        margin-left: 7.5vw;
     }
 }
