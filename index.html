@@ -43,28 +43,22 @@
 <body>
         <!-- Menu Modal -->
         <div class="MenuModal" id="MenuModal">
+            <div id="closeMenu" onclick="closeMenu()" >
+                <img src="img/icons/close.png" alt="closeMenu">
+            </div>
                 <a href="">Home</a>
                 <a href="">Works</a>
                 <a href="">About</a>
                 <a href="">Contact</a>
             <script>
-                    //  for Menu btn in phone , NOT WORKING IN THE EXTERNAL BUT WORKING IN THE INTERNAL
-         var menuClick = 1;
-         menu(menuClick)
-    
-         function openMenu(o){
-             menu(menuClick += o)
-         }
-    
-         function menu(o){
-            if(o%2==0){
-                document.getElementById("MenuModal").style=" height:fit-content;"
-            }
-            else{
-                document.getElementById("MenuModal").style="height : 0px; "
-            }
-         }
-        //  <<---------------------------------------->
+                Menu = document.getElementById("MenuModal")
+                CloseMenu = document .getElementById("closeMenu")
+                function openMenu(){
+                    Menu.style="width:100%"
+                }
+                function closeMenu(){
+                    Menu.style="width: 0%"
+                }
             </script>
         </div>
 
@@ -81,7 +75,7 @@
                     <p id="line3">i am a Scientist</p>
                     <button class="btn_l">Contact Me</button>
                     <button class="btn_l"><a href="#MainContent">Explore &#8595;</a></button>
-                    <span>Explore who I am, and know more about me</span>
+                    <span >Explore who I am, and know more about me</span>
                 </div>
             </div>
 
@@ -112,7 +106,7 @@
             <a href="">About</a>
             <a href="">Contact</a>
         </div>
-        <div id="MenuBtn" onclick="openMenu(1)">
+        <div id="MenuBtn" onclick="openMenu()">
             <img src="img/icons/menuBtn.png" alt="Menu">
         </div>
         <script>
@@ -134,7 +128,7 @@
     <main id="MainContent">
         <section class="section1">
             <div class="content">
-                <div class="heading">
+                <div class="heading" id="Reavel">
                     <h1>Achivements</h1>
                     <hr>
                     <p>
@@ -146,10 +140,17 @@
                 </div>
             </div>
         </section>
+        
         <section class="section2">
 
         </section>
     </main>
+    <script src="js/scroll-out.js"></script>
+    <script>
+        ScrollOut({
+            targets : "#Reavel, hr, video"
+        })
+    </script>
 </body>
 
 </html>
