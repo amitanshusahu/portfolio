@@ -3,13 +3,15 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amitanshu sahu</title>
     <link rel="stylesheet" href="homestyle.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap" rel="stylesheet">
                 <!-- for Explore button-- -->
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
                 <script>
@@ -40,7 +42,18 @@
                 </script>
 </head>
 
-<body>
+<body onload="loading()">
+        <!-- loading splash screen -->
+        <div id="splash">
+            <img src="img/icons/loding.gif" alt="loading">
+            <script>
+                let Splash=document.getElementById("splash");
+                function loading(){
+                    Splash.style="display:none";
+                }
+            </script>
+        </div>
+
         <!-- Menu Modal -->
         <div class="MenuModal" id="MenuModal">
             <div id="closeMenu" onclick="closeMenu()" >
@@ -74,7 +87,7 @@
                     <p id="line2">Dr.Amitanshu sahu</p>
                     <p id="line3">i am a Scientist</p>
                     <button class="btn_l">Contact Me</button>
-                    <button class="btn_l"><a href="#MainContent">Explore &#8595;</a></button>
+                    <button class="btn_l" id="explore"><a href="#MainContent">Explore &#8595;</a></button>
                     <span >Explore who I am, and know more about me</span>
                 </div>
             </div>
@@ -132,11 +145,15 @@
                     <h1>Achivements</h1>
                     <hr>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur laudantium ipsa sit, autem cumque quidem temporibus iusto. Accusamus, numquam ex aspernatur libero qui assumenda sed provident ab reiciendis iste ratione.
+                    <b>IIT JAM (AIR-1)|JEST(AIR-1)|MSc(physics)IIT Bombay</b> also <b>CSIR-NET(AIR-1) | GRE | TIRF(AIR-1)</b>,<b>Phd | MIT</b> on <b>Quantum Computer</b>. <br>
+                    Currently, a <b>Scientist | Web developer | Android developer | Content creator | Graphic designer | Start ups</b> and a lot of other skills.. 
                     </p>
+                    <h1 id="curious" style="display: inline-block;">CURIOUS ?</h1><Span> about me,</Span> <br>
+                    <a href="#" class="btn_l" id="sec1Btn" >GO TO ABOUT</a>
                 </div>
-                <div id="AchivementVideo">
-                    <video src="video/Dragon Ball Super - U Got That AMV_Edit (looped).mp4" alt="not available" loop controls autoplay poster="img/tempPoster.jpg" ></video>
+
+                <div id="VideoMask">
+                    <video id="vid1" src="video/Dragon Ball Super - U Got That AMV_Edit (looped).mp4" alt="not available" loop controls autoplay poster="img/tempPoster.jpg" ></video>
                 </div>
             </div>
         </section>
@@ -145,10 +162,11 @@
 
         </section>
     </main>
+    
     <script src="js/scroll-out.js"></script>
     <script>
         ScrollOut({
-            targets : "#Reavel, hr, video"
+            targets : "#Reavel, hr, video, button"
         })
     </script>
 </body>
