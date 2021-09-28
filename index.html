@@ -54,6 +54,31 @@
             </script>
         </div>
 
+        <!-- permission modal  -->
+        <div id="permission">
+            <div class="Allow">
+                <h1>For best user experience-</h1>
+                <p>
+                    <li>Autoplay Content</li>
+                    <li>Background music</li>
+                    <b>Allow all these for the best user experience, this is a portfolio website but it's a little resource hungry , which should not be the case but still...😋😁</b>
+                </p>
+            </div>
+            <div class="AllowBtn">
+                <button class="btn_u" onclick="permit()"> OK </button>
+                <button class="btn_u" onclick="deny()"> Cancel </button>
+            </div>
+            <script>
+                function permit(){
+                    document.getElementById("vid1").play()
+                    document.getElementById("permission").style="display:none;"
+                }
+                function deny(){
+                    document.getElementById("permission").style="display:none;"
+                }
+            </script>
+        </div>
+
         <!-- Menu Modal -->
         <div class="MenuModal" id="MenuModal">
             <div id="closeMenu" onclick="closeMenu()" >
@@ -148,17 +173,33 @@
                     <b>IIT JAM (AIR-1)|JEST(AIR-1)|MSc(physics)IIT Bombay</b> also <b>CSIR-NET(AIR-1) | GRE | TIRF(AIR-1)</b>,<b>Phd | MIT</b> on <b>Quantum Computer</b>. <br>
                     Currently, a <b>Scientist | Web developer | Android developer | Content creator | Graphic designer | Start ups</b> and a lot of other skills.. 
                     </p>
-                    <h1 id="curious" style="display: inline-block;">CURIOUS ?</h1><Span> about me,</Span> <br>
+                    <h1 id="curious" style="display: inline-block;">CURIOUS ?</h1><Span id="abt"> about me,</Span> <br>
                     <a href="#" class="btn_l" id="sec1Btn" >GO TO ABOUT</a>
                 </div>
 
                 <div id="VideoMask">
-                    <video id="vid1" src="video/Dragon Ball Super - U Got That AMV_Edit (looped).mp4" alt="not available" loop controls autoplay poster="img/tempPoster.jpg" ></video>
+                    <video id="vid1" src="video/Dragon Ball Super - U Got That AMV_Edit (looped).mp4" alt="not available" loop controls autoplay poster="img/header1.1.jpg" ></video>
                 </div>
             </div>
         </section>
         
         <section class="section2">
+            <div class="slideShow">
+                <div class="slide1">
+                    <div class="WorkContainer">
+                        <div class="imgHolder">
+                            <img src="img/webdev.png" alt="">
+                        </div>
+                        <div class="heading">
+                            <h1>Web Developement</h1>
+                            <p>see how i suck in web developement, these are the images of the website that i have created as a hobby😉...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section3">
 
         </section>
     </main>
@@ -166,7 +207,7 @@
     <script src="js/scroll-out.js"></script>
     <script>
         ScrollOut({
-            targets : "#Reavel, hr, video, button"
+            targets : "#Reavel, hr, video"
         })
     </script>
 </body>
