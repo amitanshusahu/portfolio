@@ -12,93 +12,106 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap" rel="stylesheet">
-                <!-- for Explore button-- -->
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-                <script>
-                    $(document).ready(function () {
-                        // Add smooth scrolling to all links
-                        $("a").on('click', function (event) {
-    
-                            // Make sure this.hash has a value before overriding default behavior
-                            if (this.hash !== "") {
-                                // Prevent default anchor click behavior
-                                event.preventDefault();
-    
-                                // Store hash
-                                var hash = this.hash;
-    
-                                // Using jQuery's animate() method to add smooth page scroll
-                                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-                                $('html, body').animate({
-                                    scrollTop: $(hash).offset().top
-                                }, 1000, function () {
-    
-                                    // Add hash (#) to URL when done scrolling (default click behavior)
-                                    window.location.hash = hash;
-                                });
-                            } // End if
-                        });
+    <!-- for Explore button-- -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Add smooth scrolling to all links
+            $("a").on('click', function (event) {
+
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 1000, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
                     });
-                </script>
+                } // End if
+            });
+        });
+    </script>
 </head>
 
 <body onload="loading()">
-        <!-- loading splash screen -->
-        <div id="splash">
-            <img src="img/icons/loding.gif" alt="loading">
-            <script>
-                let Splash=document.getElementById("splash");
-                function loading(){
-                    Splash.style="display:none";
-                }
-            </script>
-        </div>
+    <!-- loading splash screen -->
+    <div id="splash">
+        <img src="img/icons/loding.gif" alt="loading">
+        <script>
+            let Splash = document.getElementById("splash");
+            function loading() {
+                Splash.style = "display:none";
+            }
+        </script>
+    </div>
 
-        <!-- permission modal  -->
-        <div id="permission">
-            <div class="Allow">
-                <h1>For best user experience-</h1>
-                <p>
-                    <li>Autoplay Content</li>
-                    <li>Background music</li>
-                    <b>Allow all these for the best user experience, this is a portfolio website but it's a little resource hungry , which should not be the case but still...😋😁</b>
-                </p>
-            </div>
-            <div class="AllowBtn">
-                <button class="btn_u" onclick="permit()"> OK </button>
-                <button class="btn_u" onclick="deny()"> Cancel </button>
-            </div>
-            <script>
-                function permit(){
-                    document.getElementById("vid1").play()
-                    document.getElementById("permission").style="display:none;"
-                }
-                function deny(){
-                    document.getElementById("permission").style="display:none;"
-                }
-            </script>
+    <!-- permission modal  -->
+    <div id="permission">
+        <div class="Allow">
+            <h1>For best user experience-</h1>
+            <p>
+                <li>Autoplay Content </li>
+                <li>Background Music </li>
+                <li>Multiple Animation</li>
+                <b>Allow all these for the best user experience, this is a portfolio website but it's a little resource
+                    hungry , which should not be the case but still...😋😁</b>
+            </p>
         </div>
+        <div class="AllowBtn">
+            <button class="btn_u" onclick="permit()"> OK </button>
+            <button class="btn_u" onclick="deny()"> Cancel </button>
+        </div>
+        <script>
+            function permit() {
+                document.getElementById("line2").style="animation: textAnimation 20s linear 1.5s infinite;"
+                document.getElementById("vid1").play()
+                autoslide();
+                autopro();
+                document.getElementById("permission").style = "transform:scale(0)"
+                document.getElementById("pro1").style = "animation: wow 0.5s ease 1 ;"
+                document.getElementById("pro2").style = "animation: wow 0.5s ease 1 ;"
+                document.getElementById("pro3").style = "animation: wow 0.5s ease 1 ;"
+                document.getElementById("pro4").style = "animation: wow 0.5s ease 1 ;"
+                document.getElementById("pro5").style = "animation: wow 0.5s ease 1 ;"
+                document.getElementById("pro6").style = "animation: wow 0.5s ease 1 ;"
+            }
+            function deny() {
+                document.getElementById("permission").style = "transform:scale(0)"
+                autoslide();
+                autopro();
+            }
+        </script>
+    </div>
 
-        <!-- Menu Modal -->
-        <div class="MenuModal" id="MenuModal">
-            <div id="closeMenu" onclick="closeMenu()" >
-                <img src="img/icons/close.png" alt="closeMenu">
-            </div>
-                <a href="">Home</a>
-                <a href="">Works</a>
-                <a href="">About</a>
-                <a href="">Contact</a>
-            <script>
-                Menu = document.getElementById("MenuModal")
-                CloseMenu = document .getElementById("closeMenu")
-                function openMenu(){
-                    Menu.style="width:100%"
-                }
-                function closeMenu(){
-                    Menu.style="width: 0%"
-                }
-            </script>
+    <!-- Menu Modal -->
+    <div class="MenuModal" id="MenuModal">
+        <div id="closeMenu" onclick="closeMenu()">
+            <img src="img/icons/close.png" alt="closeMenu">
         </div>
+        <a href="">Home</a>
+        <a href="">Works</a>
+        <a href="">About</a>
+        <a href="">Contact</a>
+        <script>
+            Menu = document.getElementById("MenuModal")
+            CloseMenu = document.getElementById("closeMenu")
+            function openMenu() {
+                Menu.style = "width:100%"
+            }
+            function closeMenu() {
+                Menu.style = "width: 0%"
+            }
+        </script>
+    </div>
 
     <!-- --header-- -->
     <header>
@@ -110,11 +123,33 @@
                 <div class="details">
                     <p id="line1">Hi, I'm</p>
                     <p id="line2">Dr.Amitanshu sahu</p>
-                    <p id="line3">i am a Scientist</p>
+                    <p class="pros">
+                        <span class="pro" id="pro2">a Web Developer</span>
+                        <span class="pro" id="pro1">a Scientist</span>
+                        <span class="pro" id="pro3">an Android Developer</span>
+                        <span class="pro" id="pro4">a Graphic Desginer</span>
+                        <span class="pro" id="pro5">A Content Creator</span>
+                        <span class="pro" id="pro6">founder of xyz</span>
+                    </p>
                     <button class="btn_l">Contact Me</button>
                     <button class="btn_l" id="explore"><a href="#MainContent">Explore &#8595;</a></button>
-                    <span >Explore who I am, and know more about me</span>
+                    <span>Explore who I am, and know more about me</span>
                 </div>
+                <script>
+                    // autoSlide
+                    var autoproindex = 0;
+                    function autopro() {
+                        var i;
+                        var pros = document.getElementsByClassName("pro");
+                        for (i = 0; i < pros.length; i++) {
+                            pros[i].style.display = "none"
+                        }
+                        autoproindex++;
+                        if (autoproindex > pros.length) { autoproindex = 1 }
+                        pros[autoproindex - 1].style.display = "inline-block";
+                        setTimeout(autopro, 1500);
+                    }
+                </script>
             </div>
 
             <script>
@@ -166,50 +201,144 @@
     <main id="MainContent">
         <section class="section1">
             <div class="content">
-                <div class="heading" id="Reavel">
+                <div class="heading" id="Reveal_l">
                     <h1>Achivements</h1>
                     <hr>
                     <p>
-                    <b>IIT JAM (AIR-1)|JEST(AIR-1)|MSc(physics)IIT Bombay</b> also <b>CSIR-NET(AIR-1) | GRE | TIRF(AIR-1)</b>,<b>Phd | MIT</b> on <b>Quantum Computer</b>. <br>
-                    Currently, a <b>Scientist | Web developer | Android developer | Content creator | Graphic designer | Start ups</b> and a lot of other skills.. 
+                        <b>IIT JAM (AIR-1)|JEST(AIR-1)|MSc(physics)IIT Bombay</b> also <b>CSIR-NET(AIR-1) | GRE |
+                            TIRF(AIR-1)</b>,<b>Phd | MIT</b> on <b>Quantum Computer</b>. <br>
+                        Currently, a <b>Scientist | Web developer | Android developer | Content creator | Graphic
+                            designer | Start ups</b> and a lot of other skills..
                     </p>
                     <h1 id="curious" style="display: inline-block;">CURIOUS ?</h1><Span id="abt"> about me,</Span> <br>
-                    <a href="#" class="btn_l" id="sec1Btn" >GO TO ABOUT</a>
+                    <a href="#" class="btn_l" id="sec1Btn">GO TO ABOUT</a>
                 </div>
 
                 <div id="VideoMask">
-                    <video id="vid1" src="video/Dragon Ball Super - U Got That AMV_Edit (looped).mp4" alt="not available" loop controls autoplay poster="img/header1.1.jpg" ></video>
+                    <video id="vid1" src="video/Dragon Ball Super - U Got That AMV_Edit (looped).mp4"
+                        alt="not available" loop controls autoplay poster="img/header1.1.jpg"></video>
                 </div>
             </div>
         </section>
-        
+
         <section class="section2">
             <div class="slideShow">
-                <div class="slide1">
+                <!-- slides -->
+                <div class="Slides" id="Slide1">
                     <div class="WorkContainer">
                         <div class="imgHolder">
                             <img src="img/webdev.png" alt="">
                         </div>
-                        <div class="heading">
-                            <h1>Web Developement</h1>
-                            <p>see how i suck in web developement, these are the images of the website that i have created as a hobby😉...</p>
+                        <div class="heading" id="slideDetails">
+                            <h1>Scientific Research</h1>
+                            <p> <b> see how i suck in web developement, these are the images of the website that i have
+                                    created as a hobby😉...</b></p>
+                            <div class="btnHolder">
+                                <button class="btn_l" id="btn_vl"> SEE WORKS </button>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- slides -->
+                <div class="Slides" id="Slide2">
+                    <div class="WorkContainer">
+                        <div class="imgHolder">
+                            <img src="img/webdev.png" alt="">
+                        </div>
+                        <div class="heading" id="slideDetails">
+                            <h1>Web Developement</h1>
+                            <p> <b> see how i suck in web developement, these are the images of the website that i have
+                                    created as a hobby😉...</b></p>
+                            <div class="btnHolder">
+                                <button class="btn_l" id="btn_vl"> SEE WORKS </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- slides -->
+                <div class="Slides" id="Slide3">
+                    <div class="WorkContainer">
+                        <div class="imgHolder">
+                            <img src="img/webdev.png" alt="">
+                        </div>
+                        <div class="heading" id="slideDetails">
+                            <h1>Content Creator</h1>
+                            <p> <b> see how i suck in web developement, these are the images of the website that i have
+                                    created as a hobby😉...</b></p>
+                            <div class="btnHolder">
+                                <button class="btn_l" id="btn_vl"> SEE WORKS </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- slides -->
+                <div class="Slides" id="Slide4">
+                    <div class="WorkContainer">
+                        <div class="imgHolder">
+                            <img src="img/webdev.png" alt="">
+                        </div>
+                        <div class="heading" id="slideDetails">
+                            <h1>Graphic Designing</h1>
+                            <p> <b> see how i suck in web developement, these are the images of the website that i have
+                                    created as a hobby😉...</b></p>
+                            <div class="btnHolder">
+                                <button class="btn_l" id="btn_vl"> SEE WORKS </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- slides -->
+                <div class="Slides" id="Slide5">
+                    <div class="WorkContainer">
+                        <div class="imgHolder">
+                            <img src="img/webdev.png" alt="">
+                        </div>
+                        <div class="heading" id="slideDetails">
+                            <h1>Android Developement</h1>
+                            <p> <b> see how i suck in web developement, these are the images of the website that i have
+                                    created as a hobby😉...</b></p>
+                            <div class="btnHolder">
+                                <button class="btn_l" id="btn_vl"> SEE WORKS </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
+            <!-- script fo the slideshow -->
+            <script>
+                // autoSlide
+                var autoslideIndex = 0;
+                function autoslide() {
+                    var i;
+                    var autoslides = document.getElementsByClassName("Slides");
+                    for (i = 0; i < autoslides.length; i++) {
+                        autoslides[i].style.display = "none"
+                    }
+                    autoslideIndex++;
+                    if (autoslideIndex > autoslides.length) { autoslideIndex = 1 }
+                    autoslides[autoslideIndex - 1].style.display = "block";
+                    clr = setTimeout(autoslide, 3500);
+                }
+            </script>
         </section>
 
         <section class="section3">
 
         </section>
     </main>
-    
+
     <script src="js/scroll-out.js"></script>
     <script>
         ScrollOut({
-            targets : "#Reavel, hr, video"
+            targets: "#Reveal_l , #Reveal_r, hr, video , #img_a"
         })
     </script>
+
 </body>
 
 </html>

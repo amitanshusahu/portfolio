@@ -19,6 +19,7 @@ html {
     background: rgb(255, 255, 255);
     border-radius: 15px;
     border: 3px solid black;
+    transition: 0.2s ease;
   }
   #permission .Allow{
     margin: 20px;
@@ -47,7 +48,6 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    /* padding-top: 17vh; */
 }
 .profileImage img{
     height: 260px;
@@ -85,7 +85,7 @@ header{
     background: url(img/lines.png);
     -webkit-background-clip: text;
     background-position: 0px 0px;
-    animation: textAnimation 20s linear 1.5s infinite;
+    /* animation: textAnimation 20s linear 1.5s infinite; */
     font-weight: bold;
 }
 @keyframes textAnimation {
@@ -93,35 +93,24 @@ header{
         background-position: 2000px 0px;
     }
 }
-.MyDetails #line3{
+.MyDetails .pros{
     font-size: 34px;
     font-weight: bold;
-    /* width: fit-content;
-    white-space: nowrap; */
-    /* overflow: hidden; */
-    /* border-right: 2px solid white; */
-    /* animation: fadeout 3s; */
-    /* animation: blink 0.5s linear infinite; */
+    height: 2ch;
 }
-/* @keyframes fadeout {
-    0%{
-        opacity: 1;
-    }
-    30%{
-        opacity: 1;
-    }
-    60%{
-        opacity: 1;
-    } 
-    100%{
+.MyDetails .pro{
+    display: none;
+}
+@keyframes wow {
+    from{
         opacity: 0;
+        transform: scaleX(0);
     }
-} */
-/* @keyframes blink {
-    50%{
-        border-right-color: transparent;
+    to{
+        opacity: 1;
+        transform: scaleX(1);
     }
-} */
+}
 .MyDetails .btn_l{
     margin: 10px;
     margin-left: 0px;
@@ -173,8 +162,6 @@ section{
 .section1 .heading  #sec1Btn{
     position: relative;
     margin: 10px;
-    /* padding-left: 60px;
-    padding-right: 60px; */
 }
 .section1 .heading #curious{
     margin-top: -20px;
@@ -190,37 +177,82 @@ section{
 .section1 video{
     margin: 40px;
     width: 550px;
-    /* height: 370px; */
-     /* overflow: hidden; */
-     border-radius: 20px;
+    border-radius: 20px;
 }
 .section1 video:hover{
     transform: scale(1.08);
 }
+
 .section2{
     background-image: url(img/section2.2.jpg);
 }
+.section2 .Slides{
+    display: none;
+    animation: pop 0.3s ease 1 ;
+}
+@keyframes pop {
+    from{
+       /* opacity: 0; */
+       transform: scale(0); 
+    }
+    to{
+       /* opacity: 1; */
+       transform: scale(1); 
+    }
+}
 .section2 .WorkContainer{
     display: flex;
+    justify-content: center;
+    align-items: center;
     padding-top: 60px;
+    position: relative;
+    z-index: 1;
 }
 .section2 .WorkContainer img{
     width: 40vw;
 }
+.section2 .WorkContainer #slideDetails{
+    margin: 10px;
+}
+.section2 .WorkContainer #slideDetails h1{
+    margin: 20px;
+    font-size: 70px;
+}
+.section2 .WorkContainer #slideDetails p{
+    margin: 20px;
+}
+.section2 .WorkContainer #slideDetails .btnHolder{
+    text-align: center;
+}
+.section2 .WorkContainer #slideDetails .btnHolder #btn_vl{
+    font-size: 25px;
+    border-radius: 17px!important;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-top: 40px;
+}
+
 /* --------------------------------------- */
 
 /* scroll animations} */
-section #Reavel{
+.section #Reveal_l{
     transform: translateX(-100vw);
 }
-video{
+.section #Reveal_r{
+    transform: translateX(100vw);
+}
+video , #img_a{
     transform: scale(0);
 }
-section #Reavel[data-scroll="in"] {
+.section #Reveal_l[data-scroll="in"] {
     transform: translateX(0);
     transition: 1s ease;
 }
-video[data-scroll="in"] {
+.section  #Reveal_r[data-scroll="in"] {
+    transform: translateX(0);
+    transition: 1s ease;
+}
+video[data-scroll="in"] ,#img_a[data-scroll="in"] {
     transform: scale(1);
     transition: 0.5s ease;
 }
@@ -234,7 +266,7 @@ video[data-scroll="in"] {
     .MyDetails #line2{
         font-size: 45px;
     }
-    .MyDetails #line3{
+    .MyDetails .pros{
         font-size: 25px;
     }
     .content{
@@ -264,6 +296,20 @@ video[data-scroll="in"] {
     }
     .section1 video:hover{
         transform: scale(1);
+    }
+    .section2 .WorkContainer{
+        padding-top: 200px;
+        /* flex-direction: column; */
+    }
+    .section2 .WorkContainer #slideDetails h1{
+        font-size: 40px;
+    }
+    .section2 .WorkContainer #slideDetails .btnHolder #btn_vl{
+        font-size: 17px;
+        border-radius: 10px!important;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-top: 10px;
     }
 }
 /* for screen width below 700px  */
@@ -296,7 +342,7 @@ video[data-scroll="in"] {
     .MyDetails #line2{
         font-size: 40px;
     }
-    .MyDetails #line3{
+    .MyDetails .pros{
         font-size: 20px;
     }
     .section1 .heading hr{
@@ -310,5 +356,15 @@ video[data-scroll="in"] {
     }
     .section1{
         background-position: 0px 0px;
+    }
+    .section2 .WorkContainer{
+        padding-top: 100px;
+        flex-direction: column;
+    }
+    .section2 .WorkContainer #slideDetails h1{
+        font-size: 30px;
+    }
+    .section2 .WorkContainer img{
+        width: 60vw;
     }
 }
