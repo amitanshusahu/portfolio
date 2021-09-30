@@ -138,7 +138,7 @@ section{
     justify-content: center;
 }
 .section1{
-    background-image: url(img/section3.jpg);
+    background-image: url(img/section2.3.jpg);
     background-size: cover;
 }
 .section1 .heading{
@@ -185,6 +185,7 @@ section{
 
 .section2{
     background-image: url(img/section2.2.jpg);
+    background-size: cover;
 }
 .section2 .Slides{
     display: none;
@@ -232,23 +233,28 @@ section{
     margin-top: 40px;
 }
 
+.section3{
+    background-image: url(img/section3.3.jpg);
+    background-size: cover;
+}
+
 /* --------------------------------------- */
 
 /* scroll animations} */
-.section #Reveal_l{
+#Reveal_l{
     transform: translateX(-100vw);
 }
-.section #Reveal_r{
+#Reveal_r{
     transform: translateX(100vw);
 }
 video , #img_a{
     transform: scale(0);
 }
-.section #Reveal_l[data-scroll="in"] {
+#Reveal_l[data-scroll="in"] {
     transform: translateX(0);
     transition: 1s ease;
 }
-.section  #Reveal_r[data-scroll="in"] {
+#Reveal_r[data-scroll="in"] {
     transform: translateX(0);
     transition: 1s ease;
 }
